@@ -3,7 +3,7 @@ import Homepage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import SignInAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
-import { auth, createUserProfileDocument } from './firebase/firebase.util';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 import { Route, Switch } from 'react-router-dom';
 
@@ -31,6 +31,8 @@ class App extends React.Component {
 
   componentDidMount() {
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      //console.log(userAuth);
+
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
@@ -40,7 +42,7 @@ class App extends React.Component {
               id: snapShot.id,
               ...snapShot.data()
             }
-          }, () => console.log(this.state));
+          });
         });
       } else {
         this.setState({ currentUser: userAuth });
