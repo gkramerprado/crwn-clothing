@@ -12,7 +12,7 @@ import "./cart-dropdown.styles.scss";
 
 const Cart = ({ cartItems, history, dispatch }) => {
   return (
-    <div className="cart-dropdown cartDropdownMain">
+    <div className="cart-dropdown cartDropdownMain cartDropNew">
       <div className="cart-items">
         {cartItems.length === 0 ? (
           <span className="empty-message">Seu carrinho esta vazio...</span>
