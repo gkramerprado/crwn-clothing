@@ -16,4 +16,4 @@ pr_review:
   rules:
     - "HTML class names should be lowercase and dash-case"
     - "Prevent the usage of `!important`"
-    - "Prevent the usage of {" "} or similars in react, just allow in cases its necessary"
+    - "Prevent the usage of {' '} or similar in React, only allow in cases where it's necessary."
